@@ -1,0 +1,13 @@
+$sql = "SELECT  anons,text FROM news WHERE id = '" .$_GET["x"] . "'";
+
+$result = mysql_query($sql);
+
+if ($result && mysql_num_rows($result) > 0) {
+
+  while ($row = mysql_fetch_assoc($result)) {
+  
+      echo $row['anons'];
+      echo $row['text'];
+
+  }
+}
