@@ -1,0 +1,15 @@
+$sql = "SELECT  anons,text FROM news WHERE id = '" .mysql_real_escape_string( $_GET["x"]). "'";
+
+$result = mysql_query($sql);
+
+if ($result && mysql_num_rows($result) > 0) {
+
+  while ($row = mysql_fetch_assoc($result)) {
+  
+      echo $row['anons'];
+      echo $row['text'];
+
+  }
+}else{
+    http_response_code(404);
+}
